@@ -5,36 +5,36 @@ using System.Web;
 
 namespace WebApplication.Models.Repo
 {
-    public class CustomerRepo : ICustomerRepo, IDisposable
+    public class ProductRepo : IProductRepo, IDisposable
     {
         public Northwind2Entities1 db = new Northwind2Entities1();
         private bool disposedValue;
-        public bool AddCustomer(Customer customer)
+        public bool AddProduct(Product product)
         {
             throw new NotImplementedException();
         }
 
-        public bool DeleteCustomer(Customer customer)
+        public bool DeleteProduct(Product product)
         {
             throw new NotImplementedException();
         }
 
-        public Customer GetCustomerById(int id)
+        public Product GetProductById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Customer GetCustomerByName(string name)
+        public Product GetProductByName(string name)
         {
             throw new NotImplementedException();
         }
 
-        public IQueryable<Customer> ListAllCustomer()
+        public IQueryable<Product> ListAllProduct()
         {
-            return db.Customers;
+            return db.Products;
         }
 
-        public bool UpdateCustomer(Customer customer)
+        public bool UpdateProduct(Product product)
         {
             throw new NotImplementedException();
         }

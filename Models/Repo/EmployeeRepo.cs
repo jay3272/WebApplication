@@ -5,36 +5,36 @@ using System.Web;
 
 namespace WebApplication.Models.Repo
 {
-    public class CustomerRepo : ICustomerRepo, IDisposable
+    public class EmployeeRepo : IEmployeeRepo, IDisposable
     {
         public Northwind2Entities1 db = new Northwind2Entities1();
         private bool disposedValue;
-        public bool AddCustomer(Customer customer)
+        public bool AddEmployee(Employee employee)
         {
             throw new NotImplementedException();
         }
 
-        public bool DeleteCustomer(Customer customer)
+        public bool DeleteEmployee(Employee employee)
         {
             throw new NotImplementedException();
         }
 
-        public Customer GetCustomerById(int id)
+        public Employee GetEmployeeById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Customer GetCustomerByName(string name)
+        public Employee GetEmployeeByName(string name)
         {
             throw new NotImplementedException();
         }
 
-        public IQueryable<Customer> ListAllCustomer()
+        public IQueryable<Employee> ListAllEmployee()
         {
-            return db.Customers;
+            return db.Employees;
         }
 
-        public bool UpdateCustomer(Customer customer)
+        public bool UpdateEmployee(Employee employee)
         {
             throw new NotImplementedException();
         }

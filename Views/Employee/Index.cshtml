@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebApplication.Models.Customer>
+﻿@model IEnumerable<WebApplication.Models.Employee>
 
 @{
     ViewBag.Title = "Index";
@@ -7,13 +7,13 @@
 
 <h2>Index</h2>
 
-<p><a href="/Customer/Create">新增客戶</a></p>
+<p><a href="/Employee/Create">新增員工</a></p>
 
 
 <div class="card shadow mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        客戶查詢表
+        員工查詢表
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -21,10 +21,10 @@
                 <thead>
                     <tr>
                         <th>
-                            客戶ID
+                            員工ID
                         </th>
                         <th>
-                            公司名稱
+                            姓名
                         </th>
                         <th></th>
                     </tr>
@@ -34,13 +34,13 @@
                     {
                         <tr>
                             <td>
-                                @Html.DisplayFor(modelItem => item.CustomerID)
+                                @Html.DisplayFor(modelItem => item.EmployeeID)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.CompanyName)
+                                @Html.DisplayFor(modelItem => item.FirstName)
                             </td>
                             <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.CustomerID })
+                                @Html.ActionLink("Edit", "Edit", new { id = item.EmployeeID })
                             </td>
                         </tr>
                     }

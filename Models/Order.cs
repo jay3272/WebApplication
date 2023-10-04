@@ -21,7 +21,7 @@ namespace WebApplication.Models
         }
     
         public int OrderID { get; set; }
-        public string CustomerID { get; set; }
+        public Nullable<int> CustomerID { get; set; }
         public Nullable<int> EmployeeID { get; set; }
         public Nullable<System.DateTime> OrderDate { get; set; }
     

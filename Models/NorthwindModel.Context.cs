@@ -13,10 +13,10 @@ namespace WebApplication.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Northwind2Entities : DbContext
+    public partial class Northwind2Entities1 : DbContext
     {
-        public Northwind2Entities()
-            : base("name=Northwind2Entities")
+        public Northwind2Entities1()
+            : base("name=Northwind2Entities1")
         {
         }
     

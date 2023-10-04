@@ -20,7 +20,7 @@ namespace WebApplication.Models
             this.Orders = new HashSet<Order>();
         }
     
-        public string CustomerID { get; set; }
+        public int CustomerID { get; set; }
         public string CompanyName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
