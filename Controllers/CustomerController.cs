@@ -36,8 +36,7 @@ namespace WebApplication.Controllers
                 db.Customers.Add(customer);
 
                 db.SaveChanges();
-                //return RedirectToAction("Index");
-                return Json(new { ReturnStatus = "error", ReturnData = "請確認輸入訊息完整或資料重複 !" });
+                return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
