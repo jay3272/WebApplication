@@ -14,9 +14,19 @@ namespace WebApplication.Models.Repo
             throw new NotImplementedException();
         }
 
-        public bool DeleteCustomer(Customer customer)
+        public bool DeleteCustomer(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Customer customer = db.Customers.Find(id);
+                db.Customers.Remove(customer);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public Customer GetCustomerById(int id)

@@ -36,12 +36,60 @@ namespace WebApplication.Controllers
                 db.Customers.Add(customer);
 
                 db.SaveChanges();
+                //return RedirectToAction("Index");
+                return Json(new { ReturnStatus = "error", ReturnData = "請確認輸入訊息完整或資料重複 !" });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { ReturnStatus = "error", ReturnData = "請確認輸入訊息完整或資料重複 !" + ex });
+            }
+        }
+
+        public ActionResult Edit(int id)
+        {
+            try
+            {
+                
+                var model = db.Customers.Where(x => x.CustomerID == id).FirstOrDefault();
+
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { ReturnStatus = "error", ReturnData = "Edit(), ex:" + ex });
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Edit([Bind(Include = "CustomerID,CompanyName")] Customer customer)
+        {
+            try
+            {
+                var model = db.Customers.Where(x => x.CustomerID == customer.CustomerID).FirstOrDefault();
+                model.CompanyName = customer.CompanyName;
+
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
                 return Json(new { ReturnStatus = "error", ReturnData = "請確認輸入訊息完整或資料重複 !" + ex });
             }
+        }
+
+        public ActionResult Delete()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            if (CustomerRepo.DeleteCustomer(id))
+            {
+                return RedirectToAction("Index");
+            }
+            return Json(new { ReturnStatus = "error", ReturnData = "刪除失敗 !" });
         }
 
         private bool CheckInputErr(Customer customer)

@@ -2,13 +2,15 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout_index.cshtml";
 }
 
 <h2>Index</h2>
 
 <p><a href="/Customer/Create">新增客戶</a></p>
 
+<!-- Custom styles for this page -->
+<link href="~/Content/jquery.dataTables.min.css" rel="stylesheet" />
 
 <div class="card shadow mb-4">
     <div class="card-header">
@@ -27,6 +29,7 @@
                             公司名稱
                         </th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,19 +45,30 @@
                             <td>
                                 @Html.ActionLink("Edit", "Edit", new { id = item.CustomerID })
                             </td>
+                            <td>
+                                @Html.ActionLink("Delete", "Delete", new { id = item.CustomerID })
+                            </td>
                         </tr>
                     }
                 </tbody>
             </table>
+
+
+
         </div>
     </div>
 </div>
 
 
+<!-- Page level plugins -->
+<script src="~/Content/jquery-3.7.0.js"></script>
+<script src="~/Content/jquery.dataTables.min.js"></script>
+
+
 <script>
 
     $(document).ready(function () {
-        $('#dataTable').DataTable({
+        $('#dataTable').dataTable({
             pagingType: 'full_numbers',
             order: [[0, 'asc']],
         });

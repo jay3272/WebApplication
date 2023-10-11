@@ -23,6 +23,6 @@ namespace WebApplication.Models.Repo
         bool UpdateCustomer(Customer customer);
 
         //刪除
-        bool DeleteCustomer(Customer customer);
+        bool DeleteCustomer(int id);
     }
 }
